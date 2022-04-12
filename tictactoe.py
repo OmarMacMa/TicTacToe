@@ -54,7 +54,7 @@ position = 0
 curr_player = "X"
 print( "The positions are represented the following way:" )
 print_dashboard( dashboard )
-while len( set_historic ) < 10 and win == False:
+while len( set_historic ) < 9 and win == False:
     position = int( input( f"Insert the position where you want to insert { curr_player }: " ) )
     if position in set_historic:
         print( "Not possible" )
@@ -69,3 +69,5 @@ while len( set_historic ) < 10 and win == False:
         win = True
         switch_player( )
         print( f"There is a winner\nCONGRATULATIONS { curr_player }" )
+    elif len( set_historic ) == 9:
+        print( "There's a tie, nobody wins" )
