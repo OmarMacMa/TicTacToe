@@ -45,25 +45,25 @@ def switch_player():
         curr_player = "X"
 
 
-print( "Hola, bienvenido a este gato" )
+print( "Hello, welcome to this TicTacToe game" )
 win = False
 dashboard = [ [ 1, 2, 3 ],[ 4, 5, 6 ],[ 7, 8, 9 ] ]
-set_historico = set()
+set_historic = set()
 characte = ""
 position = 0
 curr_player = "X"
-print( "Las posiciones son de la siguiente manera:" )
+print( "The positions are represented the following way:" )
 print_dashboard( dashboard )
-while len( set_historico ) < 10 and win == False:
-    position = int( input( f"Insert the position where you want to insert {characte}: " ) )
-    if position in set_historico:
+while len( set_historic ) < 10 and win == False:
+    position = int( input( f"Insert the position where you want to insert { curr_player }: " ) )
+    if position in set_historic:
         print( "Not possible" )
         continue
-    set_historico.add( position )
+    set_historic.add( position )
     dashboard = fill_dashboard( curr_player, position, dashboard )
     print_dashboard( dashboard )
     switch_player( )
-    if len( set_historico ) < 4:
+    if len( set_historic ) < 4:
         continue
     if verify_winner( dashboard ):
         win = True
